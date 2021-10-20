@@ -1,0 +1,16 @@
+# NLW HEAT
+
+Aplicação node feita na NLW da @rocketseat para o envio de mensagem no evento doWhile
+
+### Features 🚀
+
+- Oauth (github)
+- express
+- Socket.io
+- Prisma (mariaDB)
+
+### Como usar 🕹
+
+* Clonar esse repositório
+* Rodar o comando <code>yarn install</code> ou <code>npm install</code>
+* Enviar request para http://localhost:4000
