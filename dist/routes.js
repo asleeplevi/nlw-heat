@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const express_1 = require("express");
+const AuthenticateUserController_1 = require("./controllers/AuthenticateUserController");
+const CreateMessageController_1 = require("./controllers/CreateMessageController");
+const GetLastThreeMessagesController_1 = require("./controllers/GetLastThreeMessagesController");
+const ProfileUserController_1 = require("./controllers/ProfileUserController");
+const ensureAuthenticated_1 = require("./middleware/ensureAuthenticated");
+const router = (0, express_1.Router)();
+exports.router = router;
+router.post('/authenticate', new AuthenticateUserController_1.AuthenticateUserController().handle);
+router.post('/messages', ensureAuthenticated_1.ensureAuthenticated, new CreateMessageController_1.CreateMessageController().handle);
+router.get('/messages/last3', new GetLastThreeMessagesController_1.GetLastThreeMessagesController().handle);
+router.get('/user/profile', ensureAuthenticated_1.ensureAuthenticated, new ProfileUserController_1.ProfileUserController().handle);
